@@ -1,4 +1,10 @@
 """"""""""
+" Plugins
+""""""""""
+
+execute pathogen#infect()
+
+""""""""""
 " General
 """"""""""
 set history=100
@@ -7,6 +13,9 @@ filetype plugin on
 filetype indent on
 
 set autoread
+
+set relativenumber
+set number
 
 """"""""""
 " UI
@@ -21,8 +30,6 @@ set wildignore=*.o,*~,*.pyc
 set wildignore+=*/.git*,*/.hg/*,*/.svn/*,*/.DS_Store
 
 set ruler
-
-set cmdheight=2
 
 set hidden
 
@@ -94,8 +101,6 @@ set wrap
 
 set laststatus=2
 
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
-
 """"""""""
 " Mappings
 """"""""""
@@ -125,4 +130,30 @@ function! HasPaste()
     endif
     return ''
 endfunction
+
+""""""""""
+" Lightline
+"""""""""
+
+let g:lightline = {
+    \ 'colorscheme': 'solarized',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'separator': { 'left': '', 'right': '' },
+    \ 'subseparator': { 'left': '', 'right': '' },
+    \ 'component': {
+    \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
+    \ },
+    \ 'component_visible_condition': {
+    \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+    \ },
+\ }
+
+""""""""""
+" GitGutter
+""""""""""
+
+let g:gitgutter_sign_column_always=1
 
