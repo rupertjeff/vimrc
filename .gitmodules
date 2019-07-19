@@ -4,3 +4,6 @@
 [submodule "bundle/fugitive.vim"]
 	path = bundle/fugitive.vim
 	url = git@github.com:tpope/vim-fugitive.git
+[submodule "bundle/vim-snazzy"]
+	path = bundle/vim-snazzy
+	url = git@github.com:connorholyday/vim-snazzy.git

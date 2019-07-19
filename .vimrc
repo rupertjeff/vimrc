@@ -67,7 +67,7 @@ syntax on
 
 set background=dark
 try
-    colorscheme solarized
+    colorscheme snazzy
 catch
 endtry
 
