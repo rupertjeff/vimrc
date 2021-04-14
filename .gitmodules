@@ -7,3 +7,6 @@
 [submodule "bundle/vim-snazzy"]
 	path = bundle/vim-snazzy
 	url = git@github.com:connorholyday/vim-snazzy.git
+[submodule "bundle/gitgutter.vim"]
+	path = bundle/gitgutter.vim
+	url = git@github.com:airblade/vim-gitgutter.git
